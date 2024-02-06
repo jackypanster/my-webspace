@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-blog-service
+spec:
+  type: NodePort
+  selector:
+    app: my-blog # 确保这个标签选择器匹配您的博客Pod的标签
+  ports:
+    - port: 80
+      targetPort: 5000
+      nodePort: 30007 # Kubernetes将自动为您分配一个端口，除非您指定一个端口

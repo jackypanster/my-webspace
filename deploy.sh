@@ -4,7 +4,7 @@
 TAG=$(date +%Y%m%d)
 
 # Docker镜像名
-IMAGE_NAME="my-flask-app"
+IMAGE_NAME="jackypanster/my-flask-app"
 
 # 构建Docker镜像
 docker build -t ${IMAGE_NAME}:${TAG} .

@@ -4,7 +4,7 @@
 TAG=$(date +%Y%m%d)
 
 # Docker镜像名
-IMAGE_NAME="my-flask-app"
+IMAGE_NAME="jackypanster/my-flask-app"
 
 # 停止并删除容器
 docker stop ${IMAGE_NAME}-${TAG}
