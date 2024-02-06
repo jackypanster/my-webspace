@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: my-pv
+  name: local-pv
 spec:
   capacity:
     storage: 10Gi
@@ -9,6 +9,14 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard
-  hostPath:
-    path: /mnt/data
+  storageClassName: local-storage
+  local:
+    path: /mnt/data  # 确保这个路径在目标节点上存在
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - "master"  # 替换为持有存储的节点的名称
