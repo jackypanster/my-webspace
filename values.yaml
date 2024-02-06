@@ -1,0 +1,5 @@
+persistence:
+  storageClass: "local-storage"
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
