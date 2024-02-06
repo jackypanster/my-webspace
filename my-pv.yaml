@@ -19,4 +19,4 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - "master"  # 替换为持有存储的节点的名称
+                - "node"  # 替换为持有存储的节点的名称
