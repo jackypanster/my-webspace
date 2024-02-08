@@ -15,7 +15,8 @@ EXPOSE 5000
 
 # 定义环境变量
 ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
+# ENV FLASK_RUN_HOST=0.0.0.0
 
 # 使用flask命令来启动应用
-CMD ["flask", "run"]
+# CMD ["flask", "run"]
+CMD ["flask", "run", "--host=0.0.0.0"]
