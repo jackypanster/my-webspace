@@ -20,3 +20,12 @@ def add_blog():
     new_blog = request.get_json()
     mongo.db.blogs.insert_one(new_blog)
     return jsonify(new_blog), 201
+
+# 添加健康检查路由
+@app.route('/health', methods=['GET'])
+def health_check():
+    """健康检查路由"""
+    return jsonify({"status": "healthy"}), 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)

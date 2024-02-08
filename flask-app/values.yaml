@@ -78,11 +78,11 @@ resources:
 
 livenessProbe:
   httpGet:
-    path: /
+    path: /health
     port: 5000
 readinessProbe:
   httpGet:
-    path: /
+    path: /health
     port: 5000
 
 autoscaling:
