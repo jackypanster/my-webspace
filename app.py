@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 app = Flask(__name__)
 
 # MongoDB配置
-app.config["MONGO_URI"] = "mongodb://localhost:27017/myBlogDb"
+app.config["MONGO_URI"] = "mongodb://my-mongo-mongodb:27017/myBlogDb"
 mongo = PyMongo(app)
 
 # 使用mongo.db.<collection>来访问集合
